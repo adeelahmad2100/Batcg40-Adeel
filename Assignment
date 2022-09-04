@@ -1,0 +1,29 @@
+
+I  have install the https://github.com/ashishrpandey/example-voting-a  on the machine.
+git clone https://github.com/ashishrpandey/example-voting-app
+[ec2-user@ip-172-31-8-107 ~]$ cd example-voting-app/k8s-specifications/
+
+
+[root@ip-172-31-8-107 k8s-specifications]# kubectl apply -f .
+deployment.apps/db unchanged
+service/db unchanged
+deployment.apps/redis unchanged
+service/redis unchanged
+deployment.apps/result unchanged
+service/result unchanged
+deployment.apps/vote unchanged
+service/vote unchanged
+deployment.apps/worker unchanged
+[root@ip-172-31-8-107 k8s-specifications]#
+
+
+I tried to chnage the Ports in the files of result-service.yaml and   vote-service.yaml but after that Still opening with old ports.
+
+
+
+[root@ip-172-31-8-107 k8s-specifications]# kubectl get node
+NAME                                               STATUS   ROLES    AGE   VERSION
+ip-172-31-11-172.ap-southeast-1.compute.internal   Ready    master   11d   v1.18.5
+ip-172-31-14-106.ap-southeast-1.compute.internal   Ready    <none>   11d   v1.18.5
+ip-172-31-8-107.ap-southeast-1.compute.internal    Ready    <none>   11d   v1.18.5
+
